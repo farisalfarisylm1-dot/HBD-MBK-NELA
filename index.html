@@ -299,164 +299,6 @@
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
-.wish-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.wish-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    max-width: 1000px;
-    width: 100%;
-    background: rgba(6, 78, 56, 0.4);
-    border: 1px solid var(--gold);
-    border-radius: 20px;
-    padding: 2.5rem;
-    backdrop-filter: blur(10px);
-}
-
-.tree-container {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Diperbesar sedikit */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gold-tree {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
-}
-
-#leaves-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.wish-leaf {
-    position: absolute;
-    background: linear-gradient(135deg, #d4af37, #f3e5ab);
-    color: #064e3b;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    animation: fadeInLeaf 0.5s ease-out forwards;
-    max-width: 85px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border: 1px solid rgba(255,255,255,0.6);
-    cursor: pointer;
-}
-.wish-comments-list {
-    margin-top: 12px;
-    max-height: 130px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-right: 5px;
-}
-
-.wish-comment-item {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    color: var(--cream);
-    animation: fadeInLeaf 0.3s ease-out forwards;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.comment-text {
-    flex-grow: 1;
-    word-break: break-word;
-}
-
-.comment-actions {
-    display: flex;
-    gap: 5px;
-    flex-shrink: 0;
-}
-
-.comment-btn {
-    background: none;
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    color: var(--gold);
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.comment-btn:hover {
-    background: var(--gold);
-    color: #064e3b;
-}
-@keyframes fadeInLeaf {
-    from { transform: scale(0); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.wish-form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.wish-form-container h3 {
-    color: var(--gold);
-    font-family: inherit;
-    font-size: 1.5rem;
-}
-
-.wish-form-container textarea {
-    width: 100%;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    padding: 1rem;
-    color: var(--cream);
-    font-family: inherit;
-    resize: none;
-    outline: none;
-}
-
-.wish-form-container textarea:focus {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-#wish-submit-btn {
-    background: var(--gold);
-    color: var(--emerald);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#wish-submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(125, 218, 244, 0.4);
-}
     </style>
 </head>
 <body>
@@ -527,37 +369,6 @@
         </div>
     </section>
 
-    <section class="slide wish-slide">
-    <div class="wish-wrapper">
-        <div class="tree-container">
-           <svg class="gold-tree" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-    <!-- Batang Pohon Utama -->
-    <path d="M250,480 L250,300" fill="none" stroke="var(--gold)" stroke-width="8" stroke-linecap="round"/>
-    
-    <!-- Cabang & Ranting Pohon yang Mengembang ke Atas -->
-    <path d="M250,380 Q200,340 130,300 Q90,270 70,220 Q50,170 80,130 Q110,90 160,120 Q200,150 220,210
-             M250,330 Q280,270 320,220 Q370,160 420,190 Q450,220 430,270 Q410,320 350,350 Q300,370 250,330
-             M200,240 Q150,200 130,150 Q110,100 150,70 Q190,40 230,90 Q250,120 250,180
-             M300,240 Q350,200 370,150 Q390,100 350,70 Q310,40 270,90 Q250,120 250,180" 
-          fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
-</svg>
-<div id="leaves-container">
-    <div class="wish-leaf" style="top: 80px; left: 100px;" title="Harapan dari Ayah">Harapan dari Ayah</div>
-    <div class="wish-leaf" style="top: 130px; left: 250px;" title="Harapan dari Ibu">Harapan dari Ibu</div>
-    <div class="wish-leaf" style="top: 190px; left: 140px;" title="Harapan dari Adik Pertama">Harapan dari Adik Pertama</div>
-    <div class="wish-leaf" style="top: 110px; left: 200px;" title="Harapan dari Adik Kedua">Harapan dari Adik Kedua</div>
-</div>
-        </div>
-     <div class="wish-form-container">
-    <h3>Tuliskan Harapan Anda untuk Mbak Naila</h3>
-    <textarea id="wish-input" placeholder="Tuliskan doa atau pesan berkesan di sini..."></textarea>
-    <button id="wish-submit-btn" onclick="addNewWish()">Kirim Pesan</button>
-    
-    <!-- Kotak Daftar Komentar Terpisah -->
-    <div id="wishes-comments-list" class="wish-comments-list"></div>
-</div>
-    </div>
-</section>
     <!-- SLIDE 3+: Konten Terkunci -->
     <section class="slide locked">
         <div class="card">
@@ -610,7 +421,7 @@
                 <div class="hidden-message">
                    <p id="typing-text" style="font-size: 1rem; margin-top: 15px;"></p>
                     <p class="handwriting">Selamat Ulang Tahun yang ke-26, Mbak Naila! 🎂✨</p>
-                    <p id="source-text"style="display: none;font-size: 1rem; margin-top: 15px;">Selamat ulang tahun yang ke-26, Mbak Naila! 🎉🤍
+                    <p id="source-text"style="font-size: 1rem; margin-top: 15px;">Selamat ulang tahun yang ke-26, Mbak Naila! 🎉🤍
 Tidak terasa waktu berjalan begitu cepat. Terima kasih karena selama ini sudah menjadi sosok kakak yang penuh kesabaran, perhatian, dan selalu berusaha menguatkan orang-orang di sekitarmu.
 Mungkin perjalanan hidupmu tidak selalu mudah, tetapi aku percaya setiap langkah yang kau jalani tidak pernah sia-sia. Allah melihat setiap lelah, setiap doa yang kau sembunyikan, dan setiap kebaikan yang kau lakukan tanpa berharap balasan.
 Semoga di usia yang baru ini Allah memberikan kesehatan yang sempurna, umur yang penuh keberkahan, rezeki yang halal dan melimpah, hati yang selalu tenang, serta kebahagiaan yang datang dari arah yang tak pernah disangka.
@@ -883,55 +694,6 @@ function startTyping() {
             }
         }
     }, 1000);
-   function addNewWish() {
-    const input = document.getElementById('wish-input');
-    const message = input.value.trim();
-    
-    if (message === "") {
-        alert("Silakan tuliskan harapan terlebih dahulu!");
-        return;
-    }
-
-    const commentsContainer = document.getElementById('wishes-comments-list');
-    
-    const commentItem = document.createElement('div');
-    commentItem.className = 'wish-comment-item';
-
-    const textSpan = document.createElement('span');
-    textSpan.className = 'comment-text';
-    textSpan.innerText = message;
-
-    const actionsDiv = document.createElement('div');
-    actionsDiv.className = 'comment-actions';
-
-    const editBtn = document.createElement('button');
-    editBtn.className = 'comment-btn';
-    editBtn.innerText = 'Edit';
-    editBtn.onclick = function() {
-        const newText = prompt("Edit harapan Anda:", textSpan.innerText);
-        if (newText !== null && newText.trim() !== "") {
-            textSpan.innerText = newText.trim();
-        }
-    };
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'comment-btn';
-    deleteBtn.innerText = 'Hapus';
-    deleteBtn.onclick = function() {
-        if (confirm("Yakin ingin menghapus harapan ini?")) {
-            commentItem.remove();
-        }
-    };
-
-    actionsDiv.appendChild(editBtn);
-    actionsDiv.appendChild(deleteBtn);
-
-    commentItem.appendChild(textSpan);
-    commentItem.appendChild(actionsDiv);
-
-    commentsContainer.prepend(commentItem);
-    input.value = "";
-}
     </script>
 </body>
 </html>
